@@ -6,7 +6,10 @@ export const getEpisodeById = (season, idText) =>
   season.episodes.find((episode) => episode.id.toString() === idText);
 //D3
 export const addEpisodeToFirstSeason = (show, episode) => {
-  const firstSeason = show.seasons[0];
-  firstSeason.episodes.push(episode);
-  return { ...show };
+  const firstSeason = { ...show, seasons: [...show.seasons] };
+  firstSeason.seasons[0] = {
+    ...firstSeason.seasons[0],
+    episodes: [...firstSeason.seasons[0].episodes, episode],
+  };
+  return firstSeason;
 };
