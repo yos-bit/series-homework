@@ -45,3 +45,12 @@ export const getCreatorsFrom = (series, country) => {
 export const sortByStartYear = (series) => {
   return [...series].sort((a, b) => a.startYear - b.startYear);
 };
+//C1
+export const renameSeries = (series, id, newTitle) => {
+  return series.map((show) => {
+    if (show.id === id) {
+      return { ...show, title: newTitle };
+    }
+    return show;
+  });
+};
