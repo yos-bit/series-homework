@@ -64,3 +64,19 @@ export const addSeason = (series, showId, season) => {
   });
 };
 //C3
+export const addEpisode = (series, showId, seasonNumber, episode) => {
+  return series.map((show) => {
+    if (show.id === showId) {
+      return {
+        ...show,
+        seasons: show.seasons.map((season) => {
+          if (season.number === seasonNumber) {
+            return { ...season, episodes: [...season.episodes, episode] };
+          }
+          return season;
+        }),
+      };
+    }
+    return show;
+  });
+};
