@@ -8,3 +8,6 @@ export const getLastSeasonNumber = (show) => {
     ? show.seasons[show.seasons.length - 1].number
     : 0;
 };
+export const getNextSeasonYear = (show) => {
+  return show.nextSeason ? show.nextSeason.year : "No announcement";
+};
