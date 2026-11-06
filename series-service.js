@@ -31,4 +31,13 @@ export const hasTopEpisode = (show, minRating) => {
     season.episodes.some((episode) => episode.rating >= minRating),
   );
 };
-
+//B4
+export const getCreatorsFrom = (series, country) => {
+  const creators = [];
+  series.forEach((show) => {
+    if (show.country === country) {
+      creators.push(...show.creators);
+    }
+  });
+  return [...new Set(creators)]; // Remove duplicates
+};
