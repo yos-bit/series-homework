@@ -80,3 +80,6 @@ export const addEpisode = (series, showId, seasonNumber, episode) => {
     return show;
   });
 };
+//C4
+//מוסיפים ל־Desert Signal את העונה מהדוגמה של C2, בעזרת addSeason
+//שומרים לקובץ series-updated.json אובייקט עם אותו platform ועם מערך הסדרות החדש — בעזרת JSON.stringify ו־writeFileSync, עם הזחה של 2 רווחים.
