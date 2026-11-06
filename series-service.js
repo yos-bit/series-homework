@@ -35,9 +35,9 @@ export const hasTopEpisode = (show, minRating) => {
 export const getCreatorsFrom = (series, country) => {
   const creators = [];
   series.forEach((show) => {
-    if (show.country === country) {
-      creators.push(...show.creators);
+    if (show.creator.country === country) {
+      creators.push(show.creator.name);
     }
   });
-  return [...new Set(creators)]; // Remove duplicates
+  return creators;
 };
