@@ -41,3 +41,7 @@ export const getCreatorsFrom = (series, country) => {
   });
   return creators;
 };
+//B5
+export const sortByStartYear = (series) => {
+  return [...series].sort((a, b) => a.startYear - b.startYear);
+};
