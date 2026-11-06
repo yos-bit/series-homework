@@ -25,3 +25,10 @@ export const getSeasonsCount = (series) => {
     seasons: show.seasons.length,
   }));
 };
+//B3
+export const hasTopEpisode = (show, minRating) => {
+  return show.seasons.some((season) =>
+    season.episodes.some((episode) => episode.rating >= minRating),
+  );
+};
+
